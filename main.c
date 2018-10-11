@@ -3,26 +3,30 @@
 #include "list.h"
 
 int main() {
-  struct node * foo = insert_front(NULL,3);
-  struct node * boo = insert_front(foo,5);
-  struct node * moo = insert_front(boo,7);
-  struct node * loo = insert_front(moo,29);
+  struct node * foo = NULL;
   printf("Printing foo: ");
   print_list(foo);
-  printf("Printing boo: ");
-  print_list(boo);
-  printf("Printing moo: ");
-  print_list(moo);
-  printf("Printing loo: ");
-  print_list(loo);
-  printf("Inserting too with value 88 and next as boo\n");
-  struct node * too = insert_front(boo,88);
-  printf("Printing too: ");
-  print_list(too);
-  printf("Proceeding to free_list(moo)\n");
-  printf("Freed Address: %p\n",free_list(moo));
-  printf("Value at Freed: %d\n",free_list(moo)->i);
-  printf("Printing moo: ");
-  print_list(moo);
+  printf("Adding 52 to foo.\nPrinting foo: ");
+  foo = insert_front(foo,52);
+  print_list(foo);
+  printf("Adding -38 to foo.\nPrinting foo: ");
+  foo = insert_front(foo,-38);
+  print_list(foo);
+  printf("Adding 109 to foo.\nPrinting foo: ");
+  foo = insert_front(foo,109);
+  print_list(foo);
+  printf("Adding 0 to foo.\nPrinting foo: ");
+  foo = insert_front(foo,0);
+  print_list(foo);
+  printf("Adding 25 to foo.\nPrinting foo: ");
+  foo = insert_front(foo,25);
+  print_list(foo);
+  printf("Freeing list foo:\n");
+  foo = free_list(foo);
+  printf("Printing foo:");
+  print_list(foo);
+  printf("Adding 52 to foo.\nPrinting foo: ");
+  foo = insert_front(foo,52);
+  print_list(foo);
   return 0;
 }
