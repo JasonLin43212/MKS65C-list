@@ -25,8 +25,5 @@ int main() {
   foo = free_list(foo);
   printf("Printing foo:");
   print_list(foo);
-  printf("Adding 52 to foo.\nPrinting foo: ");
-  foo = insert_front(foo,52);
-  print_list(foo);
   return 0;
 }
